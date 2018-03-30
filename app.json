@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/form/form",
+    "pages/template/template",
+    "pages/cardDetail/cardDetail",
+    "pages/myDetail/myDetail",
+    "pages/adminChoose/adminChoose",
+    "pages/modifyStage/modifyStage",
+    "pages/modifyUser/modifyUser",
+    "pages/bookManage/bookManage",
+    "pages/newBook/newBook",
+    "pages/orderList/orderList",
+    "pages/iconDetail/iconDetail",
+    "pages/admin/admin",
+    "pages/newStore/newStore",
+    "pages/school/school",
+    "pages/my/my",
+    "pages/storeDetail/storeDetail",
+    "pages/card/card",
+    "pages/store/store",
+    "pages/logs/logs",
+    "pages/article/article"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F89744",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#686868",
+    "selectedColor": "#ea986c",
+    "backgroundColor": "#303030",
+    "borderStyle": "white",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar/wheel.png",
+        "selectedIconPath": "images/tabBar/wheel_select.png",
+        "text": "驾校"
+      },
+      {
+        "pagePath": "pages/store/store",
+        "iconPath": "images/tabBar/store.png",
+        "selectedIconPath": "images/tabBar/store_select.png",
+        "text": "商户"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/tabBar/my.png",
+        "selectedIconPath": "images/tabBar/my_select.png",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+<!--pages/article/article.wxml-->
+<view class='imgContainer'>
+<view wx:for="{{contentPics}}" wx:key="this">
+<image style='width:750rpx;' src='{{item}}' mode="widthFix"></image>
+</view>
+</view>

@@ -1,0 +1,28 @@
+<view class='container'>
+  <view class='boss'>
+    <text style='display:block;color:orange;margin-bottom:15rpx;'>商家信息</text>
+    <form bindsubmit='newStore'>
+    <text class='mark'>商家id</text>
+      <input class='inputs' type='number' value='{{storeItem.storeId}}' name="storeId"></input>
+      <text class='mark'>商家名字</text>
+      <input class='inputs' type='text' value='{{storeItem.storeName}}' name="storeName"></input>
+      <text class='mark'>简介</text>
+      <input class='inputs' type='text' value='{{storeItem.storeSubtitle}}' name="storeSubtitle"></input>
+        <text class='mark'>商家地址</text>
+      <input class='inputs' type='text' value='{{storeItem.storeAdd}}' name="storeAdd"></input>
+       <text class='mark'>wifi信息 名称和密码用英文,隔开</text>
+      <input class='inputs' type='text' value='{{storeItem.storeLocation}}' name="storeLocation"></input>
+        <text class='mark'>店铺状态 0:在架 1:下架 用户端不显示</text>
+      <input class='inputs' type='number' value='{{storeItem.delFlag}}' name="delFlag"></input>
+      <text class='mark'>商家电话</text>
+      <input class='inputs' type='number' value='{{storeItem.storeTel}}' name="storeTime"></input>
+        <text class='mark'>营业时间</text>
+      <input class='inputs' type='text' value='{{storeItem.storeTime}}' name="storeTel"></input>
+      <text class='mark'>商家图片</text>
+      <input class='inputs' value='{{storeItem.storePic}}' name="storePic"></input>
+        <text class='mark'>折扣</text>
+      <input class='inputs' type='number'  value='{{storeItem.discount}}' name="discount"></input>
+      <button class="btn" formType="submit">保存</button>
+    </form>
+  </view>
+</view>

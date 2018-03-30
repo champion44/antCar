@@ -1,0 +1,101 @@
+<!--pages/iconDetail/iconDetail.wxml-->
+<view class='boss'>
+  <view class='banner'>
+    <image src='http://sinacloud.net/redant-666/banner/wait.jpg'></image>
+    <text class='text'>网上预约,告别排队</text>
+    <text class="text2">点击对应的时间格进行选择</text>
+  </view>
+  <view class="table">
+    <view class='wrap' wx:for="{{date}}" wx:key="this">
+
+      <view class="tr">
+        <view class="th">{{item}}</view>
+      </view>
+
+    </view>
+    <!--wrap-->
+    <view class="tr" bindtap='content'>
+      <view class="td" id="0"><text style='padding-top:60rpx;'>上午</text></view>
+      <view class="td" id="1">
+        <view id="1" wx:for="{{one}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="1" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="1" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+      <view class="td" id="2">
+        <view id="2" wx:for="{{two}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="2" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="2" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+      <view class="td" id="3">
+        <view id="3" wx:for="{{three}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="3" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="3" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+      <view class="td" id="4">
+        <view id="4" wx:for="{{four}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="4" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="4" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+      <view class="td" id="5">
+        <view id="5" wx:for="{{five}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="5" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="5" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+    </view>
+
+    <view class="tr" bindtap='content'>
+      <view class="td" id="0">
+      <text style='padding-top:60rpx;'>下午</text>
+      </view>
+      <view class="td" id="7">
+        <view id="7" wx:for="{{six}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="7" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="7" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+      <view class="td" id="8">
+        <view id="8" wx:for="{{seven}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="8" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="8" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+      <view class="td" id="9">
+        <view id="9" wx:for="{{eight}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="9" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="9" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+      <view class="td" id="10">
+        <view id="10" wx:for="{{nine}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="10" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="10" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+      <view class="td" id="11">
+        <view id="11" wx:for="{{ten}}" wx:key="this">
+          <text wx:if="{{item.index<5}}" id="11" class='oCar iconfont icon-jiaoche'></text>
+          <text wx:if="{{item.index>5}}" id="11" class='car iconfont icon-jiaoche'></text>
+        </view>
+        <!--for-->
+      </view>
+    </view>
+  </view>
+  <view class='bottom'>
+    <input class='input' disabled='true' value='{{selectDate}}' maxlength='-1'></input>
+    <button class='btn' bindtap='book'>预约</button>
+  </view>
+</view>

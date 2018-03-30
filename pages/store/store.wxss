@@ -1,0 +1,40 @@
+/* pages/store/store.wxss */
+.storeContainer{
+  background-color: rgb(239, 239, 239);
+}
+.swiper {
+  height: 320rpx;
+  width: 100%;
+}
+
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.card{
+  width: 100%;
+  height: 200rpx;
+    margin-top: 20rpx;
+}
+.stores{
+  margin-top: 10rpx;
+  background-color: white;
+  
+}
+.store{
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+}
+.store image{
+  height: 180rpx;
+  width: 240rpx;
+  margin: 10rpx 30rpx;
+}
+.description{
+  display: flex;
+  flex-direction: column;
+}
+.description text{
+  margin-top: 15rpx;
+}

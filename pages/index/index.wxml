@@ -1,0 +1,73 @@
+<!--index.wxml-->
+<view class="mainContainer">
+  <view class='topAd'>
+    <text class='location' decode="{{true}}" space="{{true}}">&nbsp;&nbsp;<text style='font-size:20px;line-height:50rpx;' decode="{{true}}" space="{{true}}" class="iconfont icon-location">&nbsp;</text>{{location}}&nbsp;&nbsp;</text>
+    <swiper indicator-active-color="rgba(248,151,68,1)" class="swiper" indicator-dots="true" autoplay="true" interval="2000" duration="1000" circular="true">
+      <block wx:for="{{adPic}}" wx:key="this" wx:for-index="index">
+        <swiper-item>
+          <image src="{{item.adPicUrl}}" class="slide-image" mode="scaleToFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="qaBtn">
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style='background-color:#F89744;height:70rpx;line-height:70rpx;'>
+      即 刻 报 名
+    </button>
+  </view>
+  <!--流程图  -->
+    <view class="youStage" >
+     <image class='logo' src='/images/logo.png'></image>
+    <text class='stage' style="color:grey;">您所在的阶段</text>
+    </view>
+  <view class='scheduals'>
+    <view class='schedual' wx:for="{{schedual}}" wx:key="this">
+    <view wx:if="{{stage==index}}" class='color'>
+      <p class="{{item.iconPath}}" style=' font-size: 50rpx'></p>
+      <p>{{item.iconTitle}}</p>
+      </view>
+       <view wx:else >
+      <p class="{{item.iconPath}}" style=' font-size: 50rpx'></p>
+      <p>{{item.iconTitle}}</p>
+      </view>
+
+    </view>
+  </view>
+  <!--四个图标  -->
+  <view class='icons'>
+    <view class='icon' wx:for="{{icons}}" wx:key="this" bindtap='iconDetail' id='{{item.iconTitle}}'>
+      <image src='{{item.iconPath}}'></image>
+      <p>{{item.iconTitle}}</p>
+    </view>
+  </view>
+  <!--icons-->
+  <view class='articles'>
+    <view class="topWrap">
+      <image class='logo' src='/images/logo.png'></image>
+      <text>小蚁文章</text>
+      <text class='moreArticles'>更多></text>
+    </view>
+    <view class='article' wx:for="{{articles}}" wx:key="this">
+      <view class='wrapper' bindtap='goToArticle' id="{{item.articleTitle}}" data-pic='{{item.contentPics}}'>
+        <image class='articlePic' src='{{item.articlePic}}'></image>
+        <view class='column'>
+          <text style='font-family: STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑";'>{{item.articleTitle}}</text>
+          <view class='viewed'>
+            <image style='margin-top:135rpx;width:50rpx;height:50rpx;' src='/images/viewed.png'></image>
+            <text decode="{{true}}" space="{{true}}" style='margin-top:140rpx;font-size:30rpx;'>&nbsp;{{item.readNum}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></text>
+          </view>
+          <!--viewed-->
+        </view>
+        <!--column-->
+      </view>
+      <!--wrapper-->
+    </view>
+    <!--article-->
+  </view>
+  <!--articles-->
+  <view class='noMore'>
+    <image src='../../images/logo.png'></image>
+    <text style="color:white">小蚁学车</text>
+  </view>
+</view>
+<!--mainContainer-->

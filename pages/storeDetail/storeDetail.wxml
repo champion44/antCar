@@ -1,0 +1,82 @@
+<!--pages/storeDetail/storeDetail.wxml-->
+<view class='box'>
+  <view class='briefIntro background' style='  margin-bottom: 5rpx;'>
+    <image src='{{storeDetail.storePic}}'>
+    </image>
+    <view class='column'>
+      <text style='position:absolute;margin-top:50rpx;font-weight: bold;'>{{storeDetail.storeName}}</text>
+      <view class='row'>
+        <text style='font-size:30rpx;color:grey'>{{storeDetail.storeCategory}}</text>
+        <text bindtap='dial' id="{{storeDetail.storeTel}}" class=" iconfont icon-dianhua2 " style='color:#FF7256;font-size:53rpx;margin-left:160rpx;'></text>
+        <text class=" iconfont icon-fenxiang-tianchong" style='color:#F89744;font-size:53rpx;margin-left:30rpx;'></text>
+        <button class='shareBtn' plain='true' open-type="share" bindshare="onShareAppMessage"></button>
+      </view>
+    </view>
+    <!--row  -->
+  </view>
+  <!--column  -->
+  <!--briefIntro  -->
+  <view class='storeAdd background' style='text-align:center;'>
+    <!--    
+    <text class=' iconfont icon-location' style='color:#F89744;font-size:40rpx;'></text>
+     -->
+    <text style='color:grey'>{{storeDetail.storeAdd}}</text>
+  </view>
+  <view class='discount background' style='margin:30rpx 0;'>
+    <text class='iconfont icon-iconfontzhizuobiaozhun0256' style='color:#F89744;font-size:100rpx;'></text>
+    <text style='font-weigth:bold;color:grey;'>小蚁优惠</text>
+    <text style="display:block;color:#F89744;margin-left:100rpx;">会员卡{{storeDetail.discount}}折</text>
+    <view wx:if="{{cardNum=='nul'}}">
+      <image class='hasNo' src='../../images/card/hasNo.png'></image>
+      <image bindtap='now' class='now' src='../../images/card/now.png'></image>
+    </view>
+    <view wx:else>
+      <view wx:if="{{vip==0}}">
+        <image class='warn' src='../../images/card/warn.png'></image>
+        <image class='view' src='../../images/card/view.png' bindtap='view'></image>
+      </view>
+      <view wx:if="{{vip==1}}">
+        <image class='done' src='../../images/card/done.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='service background'>
+    <view class='storeInfoTop'>
+      <text class=' iconfont icon-shanghu ' style='color:rgb(62,140,239);font-size:50rpx;margin-left:80rpx;'></text>
+      <text> 商户信息</text>
+    </view>
+    <!--商户信息view闭合  -->
+    <view style="  padding-bottom: 30rpx;">
+      <text class='iconfont icon-shizhong' style="font-size:60rpx;font-weight:bold;margin-left:80rpx;"></text>
+      <text> 营业时间:{{storeDetail.storeTime}}</text>
+    </view>
+    <!--营业时间view 没用 控制换行  -->
+    <view class='icons'>
+      <view>
+        <text bindtap='getWifi' id='{{storeDetail.storeLocation}}' class='icon iconfont icon-wifi' ></text>
+        <p>wifi</p>
+      </view>
+      <view>
+        <text class='icon iconfont icon-yudingzhongxin' style="color:rgb(135,206,250);"></text>
+        <p>预定</p>
+      </view>
+
+      <view>
+        <text class='iconfont icon icon-wechat' style="color:rgb(136,215,79)"></text>
+        <p>微信支付</p>
+      </view>
+
+
+    </view>
+    <!--icons闭合  -->
+  </view>
+  <!--service闭合  -->
+  <view class='background'>
+    <view class='payBtn'>
+      <form>
+        <input bindblur="bindconfirm" type='digit' name="Amount" placeholder='请输入消费金额' placeholder-style='text-align:center' value=''></input>
+        <button type='primary' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" formType="submit">支付</button>
+      </form>
+    </view>
+  </view>
+</view>

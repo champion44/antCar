@@ -1,0 +1,28 @@
+<!--pages/school/school.wxml-->
+<view class='boss'>
+  <view class='btns'>
+    <button class='{{on}}' bindtap='pre'>预付金</button>
+    <button class='{{off}}' bindtap='totalfee'>学费</button>
+  </view>
+  <view class='topNotice'>
+<text>您共有{{schoolOrder.length}}天订单记录</text></view>
+ <view class='lists' wx:for="{{schoolOrder}}" wx:key="this" >
+  <view class='list1'>
+  <view class='top'>
+  <image class='logo' src='/images/logo.png'></image>
+  <text>{{item.time}}</text>
+  </view><!--top-->
+  <view wx:for='{{item.orderDTOForStoreList}}' wx:key="this">
+  <view class='orders'>
+  <image src='https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/storeImgs/{{item.storeId}}.jpg' class='storeImg'></image>
+  <view class='column'>
+  <text style=' font-size: 30rpx;'>红小蚁协议到账</text>
+  <text class='time'> {{item.time}}</text></view>
+    <text class='price' wx:if='{{item.payStatus==1}}'>+ ¥{{item.orderAmount}}</text>
+     <text class='price' style='color:red' wx:else='{{item.payStatus==2}}'>¥{{item.orderAmount}}<text style='font-size:35rpx;color:lightgray'>已退</text></text>
+  </view>
+    </view>
+    <text class='total'>总流水:¥{{item.total+item.refund}} 退款:¥{{item.refund}} 当天小结: <text style='font-size: 35rpx;color:orange'> ¥{{item.total}}</text></text>
+  </view><!--list-->
+  </view><!--lists-->
+</view>

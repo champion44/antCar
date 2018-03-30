@@ -1,0 +1,101 @@
+<!--pages/adminChoose/adminChoose.wxml-->
+<view class='boss'>
+
+  <view wx:if='{{showOrder}}'>
+    <view class='btns'>
+      <button class='paid' bindtap='paid'>已支付</button>
+      <button class='refunded' bindtap='refunded'>已退款</button>
+    </view>
+    <view class="table1">
+      <view class="tr bg-w">
+        <view class="th">名字</view>
+        <view class="th">电话</view>
+        <view class="th ">商户</view>
+        <view class="th ">金额</view>
+        <view class="th ">时间</view>
+      </view>
+      <block wx:for="{{orderList}}" wx:key="this">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}" data-user='{{item}}'>
+          <view class="td" style="font-size:30rpx;">{{item.realName}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.buyerPhone}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.buyerAddress}}</view>
+          <view class="td" wx:if='{{item.payStatus==1}}'>+¥{{item.orderAmount}}</view>
+          <view class="td" wx:if='{{item.payStatus==2}}'>-¥{{item.orderAmount}}</view>
+
+          <view class="td" style="font-size:25rpx; font-weight: bold;">{{item.time}}</view>
+        </view>
+        <view class="tr" wx:else data-user='{{item}}'>
+          <view class="td" style="font-size:30rpx;">{{item.realName}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.buyerPhone}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.buyerAddress}}</view>
+          <view class="td" wx:if='{{item.payStatus==1}}'>+¥{{item.orderAmount}}</view>
+          <view class="td" wx:if='{{item.payStatus==2}}'>-¥{{item.orderAmount}}</view>
+          <view class="td" style="font-size:25rpx; font-weight: bold;">{{item.time}}</view>
+        </view>
+      </block>
+    </view>
+    <!--table-->
+  </view>
+
+  <view wx:if='{{showUser}}'>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">名字</view>
+        <view class="th">电话</view>
+        <view class="th ">缴费情况</view>
+        <view class="th ">会员</view>
+      </view>
+      <block wx:for="{{allUsers}}" wx:key="this">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap='modifyUser' data-user='{{item}}'>
+          <view class="td" wx:if='{{item.userName==""}}' style="font-size:30rpx;color:lightgrey">{{item.userWxname}}</view>
+          <view class="td" wx:else style="font-size:30rpx;">{{item.userName}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.userPhone}}</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.paid==0}}'>未缴费</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.paid==2}}'>已交押金</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.paid==3}}'>已交全款</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.vip==0}}'>否</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.vip==1}}'>是</view>
+        </view>
+        <view class="tr" wx:else bindtap='modifyUser' data-user='{{item}}'>
+          <view class="td" wx:if='{{item.userName==""}}' style="font-size:30rpx;color:lightgrey">{{item.userWxname}}</view>
+          <view class="td" wx:else style="font-size:30rpx;">{{item.userName}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.userPhone}}</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.paid==0}}'>未缴费</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.paid==2}}'>已交押金</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.paid==3}}'>已交全款</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.vip==0}}'>否</view>
+          <view class="td" style="font-size:30rpx;" wx:if='{{item.vip==1}}'>是</view>
+        </view>
+      </block>
+    </view>
+    <!--table-->
+  </view>
+
+  <view class='store' wx:if='{{showStore}}'>
+    <button class='new' bindtap='createStore'>新增商户</button>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">商户id</view>
+        <view class="th">商户名字</view>
+        <view class="th ">商户折扣</view>
+        <view class="th ">状态</view>
+      </view>
+      <block wx:for="{{storeList}}" wx:key="this">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap='modify' data-modify='{{item}}'>
+          <view class="td">{{item.storeId}}</view>
+          <view class="td">{{item.storeName}}</view>
+          <view class="td">{{item.discount}}</view>
+          <view class="td" wx:if='{{item.delFlag==0}}'>在架</view>
+          <view class="td" wx:else ><text style='color:lightgrey'>下架</text></view>
+        </view>
+        <view class="tr" wx:else bindtap='modify' data-modify='{{item}}'>
+          <view class="td">{{item.storeId}}</view>
+          <view class="td">{{item.storeName}}</view>
+          <view class="td">{{item.discount}}</view>
+          <view class="td" wx:if='{{item.delFlag==0}}'>在架</view>
+          <view class="td" wx:else ><text style='color:lightgrey'>下架</text></view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<view class="container">
+<button id='1' bindtap='stores'>商户列表</button>
+<button id='2' bindtap='stores'>用户列表</button>
+<button id='3' bindtap='stores'>订单列表</button>
+</view>

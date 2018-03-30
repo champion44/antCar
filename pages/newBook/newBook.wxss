@@ -1,0 +1,37 @@
+/* pages/newBook/newBook.wxss */
+.boss{
+  margin-top: 15%;
+  width: 90%;
+}
+.inputs{
+  border: 1rpx solid orange;
+  border-radius: 10rpx;
+  margin: 15rpx;
+  height: 65rpx;
+}
+text{
+ padding-left: 20rpx;
+ font-size: 35rpx;
+}
+.btns{
+  display: flex;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+.singleBtn{
+  background-color: orange;
+  color: white;
+  width: 45%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 25rpx;
+}
+.btn{
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: orange;
+  color: white;
+  margin-top: 40rpx;
+  width: 93%;
+
+}

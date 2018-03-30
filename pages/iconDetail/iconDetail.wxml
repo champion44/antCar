@@ -1,0 +1,52 @@
+<!--pages/iconDetail/iconDetail.wxml-->
+<view class='boss' wx:if='{{showPic}}'>
+<image class='pic' src='{{pic}}' mode='widthFix'></image>
+</view>
+<view class='boss' wx:if="{{showOrderPage}}">
+  <view class='banner'>
+    <image src='http://sinacloud.net/redant-666/banner/wait.jpg'></image>
+    <text class='text'>网上预约,告别排队</text>
+    <text class="text1">您的预约时间为:{{bookedTime}}</text>
+    <button bindtap='cancelBook' class='cancelBtn' wx:if="{{cancel}}">取消预约</button>
+    <text class="text2">点击对应的时间格进行选择</text>
+  </view>
+  <view class='table'>
+    <view class='wrap' wx:for="{{date}}" wx:key="this">
+      <view class="tr">
+        <view wx:if="{{index==0}}" class="th">{{item}}</view>
+        <view wx:if="{{index==1}}" class="th1">{{item}}</view>
+      </view>
+    </view>
+
+    <view class="tr" >
+      <view class='oneRow'>
+        <view class="td" id="0">
+          <text class='text1'>上午</text>
+        </view>
+        <view class="td1" id="0" bindtap='select'>
+          <view class='fourCar'  id="0" wx:for="{{up}}" wx:key="this">
+            <text wx:if="{{item.index<5}}" id="0" class='oCar iconfont icon-jiaoche'></text>
+            <text wx:if="{{item.index>5}}" id="0" class='car iconfont icon-jiaoche'></text>
+          </view>
+        </view>
+      </view>
+      <view class='oneRow'>
+        <view class="td" id="1">
+          <text class='text1'>下午</text>
+        </view>
+        <view class="td1" id="1" bindtap='select'>
+          <view class='fourCar' id="1" wx:for="{{down}}" wx:key="this">
+            <text wx:if="{{item.index<5}}" id="1" class='oCar iconfont icon-jiaoche'></text>
+            <text wx:if="{{item.index>5}}" id="1" class='car iconfont icon-jiaoche'></text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class='bottom'>
+    <input class='input' disabled='true' value='{{selectDate}}' maxlength='-1'></input>
+        <button wx:if="{{cancel}}" disabled='true' class='btn' bindtap='book'>预约</button>
+    <button wx:if="{{!cancel}}" class='btn' bindtap='book'>预约</button>
+  </view>
+</view>

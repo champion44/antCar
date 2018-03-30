@@ -1,0 +1,9 @@
+/* pages/newStore/newStore.wxss */
+@import '../../pages/newBook/newBook.wxss';
+.boss{
+  margin-top: 5%;
+  width: 90%;
+}
+.btn{
+  margin-bottom: 25rpx;
+}

@@ -1,0 +1,6 @@
+<!--pages/card/card.wxml-->
+<view>
+<image style='width:750rpx;'  mode="widthFix" src='https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/vip/applyCardInfo.jpg'></image>
+
+<button class='btn' bindtap='apply'>点击申领</button>
+</view>

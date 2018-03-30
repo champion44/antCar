@@ -1,0 +1,144 @@
+/* pages/storeDetail/storeDetail.wxss */
+
+.box {
+  background-color: rgb(239, 239, 239);
+  position: relative;
+}
+.shareBtn{
+  width: 70rpx;
+  height: 70rpx;
+  position: absolute;
+  left: 85%;
+  top: 6%;
+opacity: 0;
+}
+.background {
+  background-color: white;
+}
+
+.briefIntro {
+  display: flex;
+  flex-direction: row;
+}
+
+.briefIntro image {
+  height: 240rpx;
+  width: 300rpx;
+  margin: 10rpx 30rpx;
+}
+
+.row {
+  position: absolute;
+  margin-top: 180rpx;
+}
+
+.discount {
+  height: 200rpx;
+}
+
+.storeInfoTop {
+  padding: 30rpx 0;
+}
+
+.hasNo {
+  height: 60rpx;
+  position: absolute;
+  width:40%;
+   left: 41%;
+  top:33%;
+}
+
+.now {
+  height: 60rpx;
+  position: absolute;width: 60%;
+  left: 36%;
+  top: 40%;
+}
+
+.warn {
+  height: 60rpx;
+  width: 60%;
+  position: absolute;
+  left: 36%;
+  top: 34%;
+}
+
+.view {
+  height: 60rpx;
+  width: 30%;
+  position: absolute;
+  left: 47%;
+  top: 40%;
+}
+
+.done {
+  height: 60rpx;
+  width: 30%;
+  position: absolute;
+  left: 49%;
+  top: 37%;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  text-align: center;
+  color: gray;
+}
+
+.icons text {
+  width: 230rpx;
+  text-align: center;
+  display: block;
+}
+
+.icons p {
+  text-align: center;
+}
+
+.icon {
+  font-size: 70rpx;
+}
+
+/* 
+.payBtn{
+  width: 80%;
+  margin-left: 10%;
+  padding-top: 10rpx;
+}
+.payBtn input {
+  border: 1px solid rgb(26, 173, 25);
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+}
+
+.payBtn button {
+
+  height: 70rpx;
+  margin-top: 10rpx;
+  line-height: 70rpx;
+} */
+
+.payBtn {
+  width: 80%;
+  margin-left: 10%;
+  padding-top: 60rpx;
+}
+
+.payBtn input {
+  border: 1px solid rgb(26, 173, 25);
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 10rpx;
+}
+
+.payBtn button {
+  height: 70rpx;
+  margin-top: 30rpx;
+  line-height: 70rpx;
+}

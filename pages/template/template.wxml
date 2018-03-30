@@ -1,0 +1,28 @@
+<!--pages/template/template.wxml-->
+<view class='boss'>
+<view wx:if="{{nul}}">
+<image class='noData' src='../../images/noData.jpg'></image>
+</view>
+<view wx:else >
+<view class='topNotice'>
+<text>您共有{{storeOrder.length}}天订单记录</text></view>
+ <view class='lists' wx:for="{{storeOrder}}" wx:key="this" >
+  <view class='list1'>
+  <view class='top'>
+  <image class='logo' src='/images/logo.png'></image>
+  <text>{{item.time}}</text>
+  </view><!--top-->
+  <view wx:for='{{item.orderDTOForStoreList}}' wx:key="this">
+  <view class='orders'>
+  <image src='https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/storeImgs/{{item.storeId}}.jpg' class='storeImg'></image>
+  <view class='column'>
+  <text style=' font-size: 30rpx;'>红小蚁协议到账</text>
+  <text class='time'> {{item.time}}</text></view>
+    <text class='price'>+ ¥{{item.orderAmount}}</text>
+  </view>
+    </view>
+    <text class='total'>当天小结: <text style='font-size: 35rpx;color:orange'> ¥{{item.total}}</text></text>
+  </view><!--list-->
+  </view><!--lists-->
+</view><!--else-->
+</view><!--boss-->

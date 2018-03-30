@@ -1,0 +1,53 @@
+@import '../../pages/orderList/orderList.wxss';
+
+.topNotice{
+  background-color: white;
+  text-align: center;
+}
+.topNotice text{
+  text-align: center;
+  color: orange;
+}
+.list1 {
+  margin-top: 20rpx;
+  background-color: white;
+}
+.top text {
+  position: absolute;
+  text-align: center;
+  color: grey;
+  padding-top: 25rpx;
+  font-size: 33rpx;
+}
+.storeImg{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 33rpx;
+  margin-left: 40rpx;
+}
+.orders{
+  margin-left: 20rpx;
+  border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  margin: 15rpx;
+}
+.time{
+  color: lightgrey;
+  font-size: 30rpx;
+  display: block;
+}
+.column{
+  position: relative;
+margin-top: -10rpx;
+}
+.price{
+  margin-left: 17.5%;
+  font-weight: bold;
+    font-size: 36rpx;
+}
+.total{
+    font-weight: bold;
+  font-size: 30rpx;
+    margin-left: 62%;
+}

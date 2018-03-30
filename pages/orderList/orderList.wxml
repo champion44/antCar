@@ -1,0 +1,42 @@
+<view class='boss'>
+  <view class="user-info">
+    <!-- <image src="{{userInfo.avatarUrl}}" class="user-avatar"></image>
+    <view class="user-nickname">
+      {{userInfo.nickName}}
+    </view> -->
+    <icon type="success" size="100" color="#F89744"></icon>
+     <view class="user-nickname">
+      {{userInfo.nickName}}所有订单
+    </view>
+    <!--user-nickname-->
+  </view>
+  <!--user-info-->
+<view wx:if="{{noData}}">
+<image class='noData' src='../../images/noData.jpg'></image>
+</view>
+
+  <view wx:if="{{!noData}}" class='lists' wx:for="{{orderList}}" wx:key="this" >
+  <view class='list'>
+  <view class='top'>
+  <image class='logo' src='/images/logo.png'></image>
+  <text>小蚁学车-{{item.buyerAddress}}</text>
+  <block wx:if="{{item.storeId==200}}">
+  <button wx:if="{{item.payStatus==1}}" bindtap='refund' data-refund='{{item}}'  class='refund'>可退款</button>
+    <button wx:if="{{item.payStatus==2}}" disabled='true'  class='refund'>已退款</button>
+  </block>
+  </view><!--top-->
+  <view class='mid'>
+  <image class='storeImg' src="https://antcar-1256058998.cos.ap-guangzhou.myqcloud.com/storeImgs/{{item.storeId}}.jpg"></image>
+  <view class='column'>
+  <text class='oriPrice'>价格:¥{{item.oriPrice}}</text>
+  <view class='innerRow'>
+  <text class='discount' decode="{{true}}" space="{{true}}">折扣:<text style='color: lightgreen'>{{item.buyerName}}</text>折&nbsp;&nbsp;</text>
+  <text class='amount'>实付:¥<text style='color: orange'>{{item.orderAmount}}</text></text>
+  </view><!--inner-->
+  <text class='time' style='color:lightgray'>{{item.time}}</text>
+  </view> <!--column--> 
+  </view><!--mid-->
+  </view><!--list-->
+  </view><!--lists-->
+</view>
+<!--booss-->

@@ -1,0 +1,71 @@
+<view class='boss'>
+  <block wx:if="{{paid==0}}">
+    <image class='formImg' src='../../images/formImg.png'></image>
+    <view wx:if='{{hasError}}' class='error'>
+      <text>{{errorMsg}}</text>
+    </view>
+    <form bindsubmit='pay'>
+      <view class='name white'>
+        <view style='display:flex;flex-direction:row;height:70rpx;line-height:70rpx;margin-top:10rpx;'>
+          <text>姓名</text>
+          <input placeholder='请输入姓名' name="name" placeholder-class='placeholderClass' style='padding-left:170rpx;height:70rpx;line-height:70rpx;'></input>
+        </view>
+      </view>
+      <view class='name white'>
+        <view style='display:flex;flex-direction:row;height:70rpx;line-height:70rpx;margin-top:10rpx;'>
+          <text>学号</text>
+          <input placeholder='请输入学号' name="stuNum" placeholder-class='placeholderClass' type='number' style='padding-left:170rpx;height:70rpx;line-height:70rpx;'></input>
+        </view>
+      </view>
+      <text class='phoneText'>您的电话信息已授权采集</text>
+      <view class='name white' style='margin-top:15rpx;'>
+        <view style='display:flex;flex-direction:row;height:70rpx;line-height:70rpx;'>
+          <text>电话</text>
+          <input disabled='true' placeholder='{{phone}}' placeholder-class='placeholderClass' style='padding-left:170rpx;height:70rpx;line-height:70rpx;'></input>
+        </view>
+      </view>
+
+      <view class='name white'>
+        <view style='display:flex;flex-direction:row;height:70rpx;line-height:70rpx;margin-top:10rpx;'>
+          <!-- <text>地址</text>
+          <input placeholder='请输入您的寝室号' name="add" placeholder-class='placeholderClass' style='padding-left:170rpx;height:70rpx;line-height:70rpx;'></input> -->
+          <text>地址</text>
+          <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}"  range="{{multiArray}}">
+            <view class="picker" name="add">
+              {{multiArray[0][multiIndex[0]]}} {{multiArray[1][multiIndex[1]]}}{{multiArray[2][multiIndex[2]]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='notice'>
+        <view style="display:flex;flex-direction:row;">
+          <icon type='info' size='30' style='line-height:300rpx;padding-left:30rpx;'></icon>
+          <textarea disabled='true' style='color:grey;line-height:60rpx;padding-left:20rpx;padding-top:30rpx;'>我们需要对用户行为进行鉴别，以便为您提供更好的服务！ 我们将通过微信向您收取
+            <text style='color:orange'>¥1</text>的费用，您可至'我的订单'操作退款</textarea>
+        </view>
+      </view>
+
+      <button class='btn' formType="submit" type='primary'>立刻预约</button>
+    </form>
+  </block>
+  <block wx:if="{{paid==1}}">
+    <icon class='icon' type="success" size="130"></icon>
+    <text class='info' style="  margin-top: 550rpx;">您的数据已提交，我们会近期与您联系！</text>
+  </block>
+  <block wx:if="{{paid==2}}">
+    <icon class='icon' type="info" size="130" color='#F89744'></icon>
+    <view style="  margin-top: 550rpx;">
+      <p class='info'>感谢您的选择！</p>
+      <p class='info2'>您已成功缴纳预约金，同时您的信息已上传至后台，我们的工作人员将会在24小时内通过电话联系您完成接下来的步骤，请保持电话畅通</p>
+    </view>
+    <view class='payBtn'>
+      <text class='warning'>红小蚁通过微信向您收取余款<text style='color:orange'>¥2680</text></text>
+      <button type='primary' bindtap='payTheRest'>支付余款</button>
+    </view>
+  </block>
+  <block wx:if="{{paid==3}}">
+    <icon class='icon' type="success" size="130" color='#F89744'></icon>
+    <text class='info' style="  margin-top: 550rpx;">您已经完成报名的所有操作</text>
+    <button class="returnBtn" bindtap='goToHome'>回首页</button>
+  </block>
+</view>

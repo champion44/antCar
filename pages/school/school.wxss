@@ -1,0 +1,58 @@
+@import '../../pages/orderList/orderList.wxss';
+@import '../../pages/template/template.wxss';
+.total{
+    font-weight: bold;
+  font-size: 30rpx;
+      margin-left: 20%;
+
+}
+.btns {
+  margin-top: 5%;
+  padding-left: 140rpx;
+  padding-bottom: 20rpx;
+  background-color: white;
+}
+
+.hasPaid {
+  position: relative;
+  margin-top: -65rpx;
+  margin-left: 74%;
+  line-height: 50rpx;
+  width: 170rpx;
+  font-size: 31rpx;
+  color: white;
+  height: 50rpx;
+  background-color: rgb(187, 242, 51);
+}
+
+.topNotice {
+  background-color: white;
+  text-align: center;
+}
+
+.topNotice text {
+  text-align: center;
+  color: orange;
+}
+
+.on {
+  width: 40%;
+  display: inline-flex;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  height: 70rpx;
+  padding-left: 60rpx;
+  line-height: 70rpx;
+}
+
+.off {
+  width: 40%;
+  padding-left: 70rpx;
+  display: inline-flex;
+  background-color: white;
+  color: orange;
+  text-align: center;
+  height: 70rpx;
+  line-height: 70rpx;
+}

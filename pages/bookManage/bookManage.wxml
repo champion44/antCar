@@ -1,0 +1,55 @@
+<!--pages/adminChoose/adminChoose.wxml-->
+<view class='boss'>
+
+  <view wx:if='{{showUserStage}}'>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">名字</view>
+        <view class="th">电话</view>
+        <view class="th ">阶段</view>
+        <view class="th ">操作</view>
+      </view>
+        <block wx:for="{{users}}" wx:key="this">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+          <view class="td">{{item.userName}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.userPhone}}</view>
+          <view class="td" >{{item.stage}}</view>
+          <view class="td" bindtap='modifyStage' data-modify='{{item}}'>修改</view>
+        </view>
+        <view class="tr" wx:else>
+          <view class="td">{{item.userName}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.userPhone}}</view>
+          <view class="td" >{{item.stage}}</view>
+          <view class="td" bindtap='modifyStage' data-modify='{{item}}'>修改</view>
+        </view>
+      </block>
+    </view>
+    <!--table-->
+  </view>
+
+  <view class='store' wx:if='{{showBooks}}'>
+    <button class='new' bindtap='createBook'>新增预约</button>
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">学员名字</view>
+        <view class="th">电话</view>
+        <view class="th ">时间</view>
+        <view class="th ">操作</view>
+      </view>
+      <block wx:for="{{books}}" wx:key="this">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}" bindtap='modify' data-modify='{{item}}'>
+          <view class="td">{{item.userName}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.userPhone}}</view>
+          <view class="td" style="font-size:30rpx; ">{{item.bookDate}}</view>
+          <view class="td" bindtap='deleteTime' data-delete='{{item}}'>删除</view>
+        </view>
+        <view class="tr" wx:else bindtap='modify' data-modify='{{item}}'>
+          <view class="td">{{item.userName}}</view>
+          <view class="td" style="font-size:30rpx;">{{item.userPhone}}</view>
+          <view class="td" style="font-size:30rpx; ">{{item.bookDate}}</view>
+          <view class="td" bindtap='deleteTime' data-delete='{{item}}'>删除</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

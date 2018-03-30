@@ -1,0 +1,11 @@
+/* pages/card/card.wxss */
+.btn{
+  position: fixed;
+  top: 90%;
+  width: 88%;
+  height: 80rpx;
+  left: 6%;
+  background-color: orange;
+  color: white;
+  line-height: 80rpx;
+}

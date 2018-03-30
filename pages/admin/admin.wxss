@@ -1,0 +1,9 @@
+/* pages/admin/admin.wxss */
+button{
+  width: 50%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: orange;
+  color: white;
+  margin: 10%;
+}

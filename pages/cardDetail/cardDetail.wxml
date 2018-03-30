@@ -1,0 +1,46 @@
+<!--pages/cardDetail/cardDetail.wxml-->
+<view class='container boss'>
+  <text style='color:grey;margin-top:10%;'>---卡片领取成功---</text>
+  <text style="color:lightgrey;font-size:30rpx;margin-top:5rpx;">小蚁学车商户折扣卡</text>
+  <image class='memberCard' src='../../images/card.png'></image>
+  <view class='cardNum'>
+    <text class='star'>{{star}}</text>
+    <text class='star'>{{star}}</text>
+    <text class='star'>{{star}}</text>
+    <text>{{last}}</text>
+  </view>
+  <view class='validateDate' >
+      <text >有效日期 : </text>
+  </view>
+  <view class='timeRow' wx:if='{{expire==1}}'>
+    <text class='getTime'>已过期</text>
+  </view>
+  <view class='timeRow' wx:elif='{{expire==0}}'>
+    <text class='getTime'>未激活</text>
+  </view>
+  <view class='timeRow' wx:else>
+    <text class='getTime'>{{firstGet}}至</text>
+    <text class='expireTime'>{{expire}}</text>
+  </view>
+  <view class='line'></view>
+  <view class='vip' wx:if="{{vip==1}}">
+    <text style='color: #F2C866;'>您的会员信息已注册,卡片已激活</text>
+  </view>
+  <view class='notVip' wx:else>
+    <text class='notice'>您的卡片还未激活</text>
+    <view>
+      <text class='title'>您可以通过以下两种方式激活</text>
+      <view>
+        <text class='way1'>*报名驾校</text>
+        <text style='position: absolute;left: 10%; top: 70%;font-size:31rpx;color:grey;'>通过首页直达按钮 根据页面指引报名</text>
+        <text class='way2'>*充值激活</text>
+        <text style='position: absolute;left: 10%; top: 79%;font-size:31rpx;color:grey;'>我们通过微信支付向你收取¥99的费用 随即激活您的卡片</text>
+      </view>
+    </view>
+    <view class='btns'>
+      <button bindtap='goToHome'>去报名</button>
+      <button bindtap='goToCharge'>去充值</button>
+    </view>
+  </view>
+  <!--else-->
+</view>

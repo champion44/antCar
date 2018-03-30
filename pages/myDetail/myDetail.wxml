@@ -1,0 +1,4 @@
+<!--pages/myDetail/myDetail.wxml-->
+<view class='container'>
+<image style='width: 750rpx;' src='{{pic}}' mode='widthFix'></image>
+ </view>

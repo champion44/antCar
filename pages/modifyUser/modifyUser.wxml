@@ -1,0 +1,24 @@
+<view class='container'>
+  <view class='boss'>
+    <text style='display:block;color:orange;margin-bottom:15rpx;'>查看及更改用户信息</text>
+    <form bindsubmit='modifyUser'>
+      <text>名字</text>
+      <input class='inputs'  type='text' value='{{user.userName}}' name="userName"></input>
+      <text>学号</text>
+      <input class='inputs'  type='number' value='{{user.userNum}}' name="userNum"></input>
+      <text>电话</text>
+      <input class='inputs'  type='number' value='{{user.userPhone}}' name="userPhone"></input>
+      <text>openid(用户唯一标示)</text>
+      <input class='inputs' disabled='true' type='text' value='{{user.userOpenid}}' name="userOpenid"></input>
+    <text>注册会员 0:非会员 1:会员</text>
+      <input class='inputs'  type='number' value='{{user.vip}}' name="vip"></input>
+      <text style='display:block;'>报名情况      <text style='font-size:32rpx;'>0:未缴费 2:已缴纳押金 3:已全额缴费</text></text>
+
+      <input class='inputs'  type='number' value='{{user.paid}}' name="paid"></input>
+      <text style='display:block;'>用户角色      <text style='font-size:32rpx;'>0:普通用户 1:管理员 2:驾校人员 10*:商户</text>
+</text>
+      <input class='inputs'  type='number' value='{{user.userCategory}}' name="userCategory"></input>
+      <button class="btn" formType="submit">修改信息</button>
+    </form>
+  </view>
+</view>

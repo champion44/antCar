@@ -1,0 +1,18 @@
+<view class='container'>
+  <view class='boss'>
+    <text style='display:block;color:orange;margin-bottom:15rpx;'>登记学员线下与驾校预约学车</text>
+    <form bindsubmit='newBook'>
+      <text>学员名字</text>
+      <input class='inputs' type='text' value='{{name}}' name="userName"></input>
+      <text>学员电话(唯一标示)</text>
+      <input class='inputs' type='number' value='{{phone}}' name="userPhone"></input>
+      <text>预约时间</text>
+      <input class='inputs' disabled='true' value='{{selectTime}}' name="bookedTime"></input>
+      <view class='btns'>
+        <button class='singleBtn' id="{{up}}" bindtap='clicked'>{{up}}</button>
+        <button class='singleBtn' id="{{down}}" bindtap='clicked'>{{down}}</button>
+      </view>
+      <button class="btn" formType="submit">记录预约</button>
+    </form>
+  </view>
+</view>

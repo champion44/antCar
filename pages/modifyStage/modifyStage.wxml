@@ -1,0 +1,15 @@
+<view class='container'>
+  <view class='boss'>
+    <text style='display:block;color:orange;margin-bottom:15rpx;'>及时更改学员学车阶段</text>
+    <form bindsubmit='newBook'>
+      <text>学员名字</text>
+      <input class='inputs' disabled='true' type='text' value='{{stage.userName}}' name="userName"></input>
+      <text>学员电话(唯一标示)</text>
+      <input class='inputs' disabled='true' type='number' value='{{stage.userPhone}}' name="userPhone"></input>
+      <text>学车阶段</text>
+      <input class='inputs' type='number' value='{{stage.stage}}' name="stage"></input>
+      <text>0:协议阶段 1:科目一 5:拿证</text>
+      <button class="btn" formType="submit">修改信息</button>
+    </form>
+  </view>
+</view>
